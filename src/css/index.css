@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+}
+
+.container {
+  height: 100vh;
+}
+
+.side {
+  top: 2px;
+  width: 350px;
+  height: 98vh;
+  border: 1px #ccc solid;
+  float: left;
+  border-radius: 5px;
+}
+
+.side .user {
+  width: 285px;
+  height: 60px;
+  padding: 30px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border-radius: 5px;
+}
+
+.side .user .user-info .username {
+  height: 35px;
+}
+
+.side .user .user-info .last-message {
+  height: 35px;
+}
+
+.side .user .icon {
+  -ms-flex-preferred-size: 70px;
+      flex-basis: 70px;
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+}
+
+.side .user .icon img {
+  width: 70px;
+  height: 70px;
+}
+
+.side .active {
+  background-color: #cceaf7;
+  border-left: blue 5px solid;
+}
+
+.chat-area {
+  height: 100vh;
+  width: calc(100% - 350px);
+  float: right;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+.chat-area .message-area {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.chat-area .message-area .message-area-text {
+  width: 80%;
+}
+
+.chat-area .message-area .message-area-text #message {
+  width: 90%;
+  height: 40px;
+  border-radius: 6px;
+}
+
+.chat-area .message-area .message-area-text #message:focus {
+  border: 2px solid #2a6df4;
+  z-index: 10;
+  outline: 0;
+}
+
+.chat-area .message-area .message-area-button {
+  width: 20%;
+}
+
+.chat-area .message-area .message-area-button #send {
+  width: 40%;
+  height: 40px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=index.css.map */

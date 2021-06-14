@@ -1,0 +1,85 @@
+$icon: 70px;
+
+body{
+    margin: 0;
+}
+
+.container{
+    height: 100vh;
+}
+.side{
+    top: 2px;
+    width: 350px;
+    height: 98vh;
+    border: 1px #ccc solid;
+    float: left;
+    border-radius: 5px;
+    .user{
+        width: 285px;
+        height: 60px;
+        padding: 30px;
+        display: inline-flex;
+        border-radius: 5px;
+        .user-info{
+            .username{
+                height: 35px;
+            }
+            .last-message{
+                height: 35px;
+            }
+        }
+        .icon{
+            flex-basis: $icon;
+            width: $icon;
+            height: $icon;
+            display: inline-block;
+            img {
+                width: $icon;
+                height: $icon;
+            }
+        }
+    }
+    .active{
+        background-color: #cceaf7;
+        border-left: blue 5px solid;
+    }
+}
+.chat-area{
+    height: 100vh;
+    width: calc(100% - 350px);
+    float: right;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    .message-area {
+        height: 10vh;
+        display: flex;
+        vertical-align: middle;
+        text-align: center;
+        .message-area-text{
+            width: 80%;
+            #message{
+                width: 90%;
+                height: 40px;
+                border-radius: 6px;
+            }
+            #message:focus {
+            border: 2px solid hsl(220, 90%, 56%);
+            z-index: 10;
+            outline: 0;
+        }
+        }
+        .message-area-button{
+            width: 20%;
+            #send{
+                width: 40%;
+                height: 40px;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
