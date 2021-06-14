@@ -6,34 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> doot_site</title>
     <link rel="stylesheet" href="css/index.css">
+    <script src="js/message.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="side">
             <div class="user active">
                 <div class="icon">
-                    <img src="img/サラリーマン.png" alt="サラリーマン">
+                    <img src="img/a.png" alt="サラリーマン">
                 </div>
                 <div class="user-info">
                     <p class="username">経営者A</p>
-                    <p class="last-message"></p>
+                    <p class="last-message" id="last-message"></p>
                 </div>
             </div>
         </div>
-        <div class="chat-area">
+        <div class="chat-area" id="chat-area">
             <div class="message-area">
                 <div class="message-area-text">
                     <input type="text" id="message" placeholder="ENTERキーで送信(上限100文字)" maxlength="100">
                     <script>
                     message.addEventListener('keydown', (e) => {
                         if (e.key === 'Enter') {
-                            sendMessage();
+                            myMessage();
                         }
                     })
                    </script>
                 </div>
                 <div class="message-area-button">
-                    <button onclick="sendMessage();" id="send">送信</button>
+                    <button onclick="myMessage();" id="send">送信</button>
             </div>
         </div>
     </div>

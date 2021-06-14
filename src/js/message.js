@@ -1,5 +1,5 @@
 function myMessage() {
-    const messsage = document.getElementById('message').value
+    const message = document.getElementById('message').value
     if (message) {
         let date = new Date()
 
@@ -16,7 +16,7 @@ function myMessage() {
         div2.appendChild(span1);
         div1.appendChild(div2);
 
-        let div = document.getElementById("chat");
+        let div = document.getElementById("chat-area");
         div.appendChild(div1);
 
         //textをクリアする
@@ -25,7 +25,7 @@ function myMessage() {
 
         botMessage(message)
     } else {
-        alert("メッセージが未入力です。")
+        alert("メッセージを入力してください")
     }
 }
 
@@ -45,7 +45,7 @@ function botMessage(message) {
   let div3 = document.createElement("div");
   let spanUser = document.createElement("span");
   spanUser.classList.add("user-name");
-  spanUser.textContent = "経営者Aさん";
+  spanUser.textContent = "経営者";
   div3.appendChild(spanUser);
   let divMessage = document.createElement("div");
   divMessage.classList.add("message", "last");
@@ -59,6 +59,15 @@ function botMessage(message) {
 
   div1.appendChild(div2);
 
-  let div = document.getElementById("chat");
-  div.append(div1);
+  let div = document.getElementById("chat-area");
+    div.appendChild(div1);
+    
+    let lastMessage = document.getElementById("last-message")
+    lastMessage.innerHTML = "<p>" + message + "</p>"
 }
+
+// const btn = document.getElementById("send");
+
+// btn.addEventListener("click", function () {
+//   console.log("ボタンがクリックされました！");
+// });
