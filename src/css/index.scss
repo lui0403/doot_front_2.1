@@ -49,14 +49,13 @@ body{
     }
 }
 .chat-area{
-    height: 100vh;
+    height: 90vh;
     width: calc(100% - 350px);
     float: right;
     position: fixed;
     top: 0;
     right: 0;
-    display: flex;
-    flex-direction: column-reverse;
+    overflow: scroll;
     .messages {
             margin-top: 30px;
             display: flex;
@@ -123,6 +122,7 @@ body{
                 background-color: #248bf5;
                 background-attachment: fixed;
                 position: relative;
+                right: 0;
                 }
                 .message.last:before {
                 content: "";
@@ -148,33 +148,42 @@ body{
                 border-bottom-left-radius: 10px;
             }
         }
-    .message-area {
-        height: 10vh;
-        display: flex;
-        vertical-align: middle;
-        text-align: center;
-        .message-area-text{
-            width: 80%;
-            #message{
-                width: 90%;
-                height: 40px;
-                border-radius: 6px;
-            }
-            #message:focus {
-            border: 2px solid hsl(220, 90%, 56%);
-            z-index: 10;
-            outline: 0;
+}
+.message-area {
+    background-color: rgb(245, 245, 245);
+    height: 10vh;
+    display: flex;
+    vertical-align: middle;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 350px);
+    .message-area-text{
+        width: 80%;
+        padding-top: 20px;
+        #message{
+            width: 90%;
+            height: 40px;
+            border-radius: 6px;
         }
-        }
-        .message-area-button{
-            width: 20%;
-            #send{
-                width: 40%;
-                height: 40px;
-                display: inline-flex;
-                justify-content: center;
-                align-items: center;
-            }
+        #message:focus {
+        border: 2px solid hsl(220, 90%, 56%);
+        z-index: 10;
+        outline: 0;
+    }
+    }
+    .message-area-button{
+        width: 20%;
+        padding-top: 20px;
+        #send{
+            background-color: #248bf5;
+            width: 40%;
+            height: 45px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            border: none;
         }
     }
 }

@@ -59,19 +59,13 @@ body {
 }
 
 .chat-area {
-  height: 100vh;
+  height: 90vh;
   width: calc(100% - 350px);
   float: right;
   position: fixed;
   top: 0;
   right: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  overflow: scroll;
 }
 
 .chat-area .messages {
@@ -141,6 +135,7 @@ body {
   background-color: #248bf5;
   background-attachment: fixed;
   position: relative;
+  right: 0;
 }
 
 .chat-area .mine .message.last:before {
@@ -168,38 +163,45 @@ body {
   border-bottom-left-radius: 10px;
 }
 
-.chat-area .message-area {
+.message-area {
+  background-color: whitesmoke;
   height: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   vertical-align: middle;
   text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: calc(100% - 350px);
 }
 
-.chat-area .message-area .message-area-text {
+.message-area .message-area-text {
   width: 80%;
+  padding-top: 20px;
 }
 
-.chat-area .message-area .message-area-text #message {
+.message-area .message-area-text #message {
   width: 90%;
   height: 40px;
   border-radius: 6px;
 }
 
-.chat-area .message-area .message-area-text #message:focus {
+.message-area .message-area-text #message:focus {
   border: 2px solid #2a6df4;
   z-index: 10;
   outline: 0;
 }
 
-.chat-area .message-area .message-area-button {
+.message-area .message-area-button {
   width: 20%;
+  padding-top: 20px;
 }
 
-.chat-area .message-area .message-area-button #send {
+.message-area .message-area-button #send {
+  background-color: #248bf5;
   width: 40%;
-  height: 40px;
+  height: 45px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -209,5 +211,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-radius: 10px;
+  border: none;
 }
 /*# sourceMappingURL=index.css.map */

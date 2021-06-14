@@ -19,7 +19,6 @@ function myMessage() {
         let div = document.getElementById("chat-area");
         div.appendChild(div1);
 
-        //textをクリアする
         let inputMessage = document.getElementById("message");
         inputMessage.value = '';
 
@@ -45,7 +44,7 @@ function botMessage(message) {
   let div3 = document.createElement("div");
   let spanUser = document.createElement("span");
   spanUser.classList.add("user-name");
-  spanUser.textContent = "経営者";
+  spanUser.textContent = "経営者A";
   div3.appendChild(spanUser);
   let divMessage = document.createElement("div");
   divMessage.classList.add("message", "last");
@@ -61,9 +60,16 @@ function botMessage(message) {
 
   let div = document.getElementById("chat-area");
     div.appendChild(div1);
+
+    const lastMessage = document.getElementById("last-message")
+    if (message.length > 30) {
+        let ms = message.substr(0, 27);
+        let sub = ms + '...';
+        lastMessage.innerHTML = "<p>" + sub + "</p>";
+    } else {
+        lastMessage.innerHTML = "<p>" + message + "</p>";
+    }
     
-    let lastMessage = document.getElementById("last-message")
-    lastMessage.innerHTML = "<p>" + message + "</p>"
 }
 
 // const btn = document.getElementById("send");
