@@ -1,7 +1,18 @@
 function myMessage() {
-    const message = document.getElementById('message').value
+    let m = document.getElementById('message').value
+    // xss対策
+    function escapeHTML(string) {
+      return string
+        .replace(/\&/g, "&amp;")
+        .replace(/\</g, "&lt;")
+        .replace(/\>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/\'/g, "&#x27");
+    }
+    const message = escapeHTML(m);
+
     if (message) {
-        let date = new Date()
+        let date = new Date()    
 
         let div1 = document.createElement("div");
         let div2 = document.createElement("div");
@@ -56,8 +67,14 @@ function botMessage(message) {
   div3.appendChild(divTime);
   div2.appendChild(div3);
 
-  div1.appendChild(div2);
+    div1.appendChild(div2);
+    
+    // 最下部にスクロール
+    var element = document.documentElement;
+    var bottom = element.scrollHeight - element.clientHeight;
+    window.scroll(0, bottom);
 
+    // 最後のメッセージを名前の下に表示
   let div = document.getElementById("chat-area");
     div.appendChild(div1);
 
