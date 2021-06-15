@@ -26,11 +26,23 @@
                 <div class="message-area-text">
                     <input type="text" id="message" placeholder="ENTERキーで送信(上限100文字)" maxlength="100">
                     <script>
-                    message.addEventListener('keydown', (e) => {
-                        if (e.key === 'Enter') {
-                            myMessage();
-                        }
-                    })
+                        // 入力フィールド
+                        var input = document.getElementById("message");
+                         
+                        var canEnter = false
+                         
+                        input.addEventListener( "keypress" , function () {
+                          canEnter = true
+                        } , false );
+                         
+                        input.addEventListener( "keyup" , function () {
+                          if(!canEnter) {
+                            return
+                          }
+                          canEnter = false
+                          // 以下エンターを押したときの挙動
+                         myMessage();
+                        } , false );
                    </script>
                 </div>
                 <div class="message-area-button">
